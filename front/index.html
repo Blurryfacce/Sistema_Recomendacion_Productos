@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Morales Cocoa | Experiencia de Compra</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    <!-- Phosphor Icons -->
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+</head>
+<body>
+    <div id="app">
+        <!-- HEADER / NAVIGATION -->
+        <header>
+            <div class="logo">
+                <span class="logo-text">MORALES<br>COCOA</span>
+            </div>
+            <nav>
+                <a href="#" class="nav-link" id="nav-catalog">Catálogo</a>
+                <a href="#" class="nav-link" id="nav-cart">
+                    <i class="ph ph-shopping-bag"></i> Carrito
+                    <span id="cart-count">0</span>
+                </a>
+            </nav>
+        </header>
+
+        <main>
+            <!-- VIEW 1: CATALOGO -->
+            <section id="view-catalog" class="view active">
+                <div class="hero">
+                    <h1>Descubre nuestro Cacao</h1>
+                    <p>Elaborado con los mejores granos seleccionados.</p>
+                </div>
+                
+                <div class="catalog-container">
+                    <aside class="filters">
+                        <h3>Categorías</h3>
+                        <div class="filter-group">
+                            <label><input type="radio" name="cat" value="leche" checked> Leche (55%)</label>
+                            <label><input type="radio" name="cat" value="oscuro"> Oscuro (75%)</label>
+                        </div>
+                        <h3>Sabores</h3>
+                        <div class="filter-group">
+                            <label><input type="radio" name="flavor" value="frutos_secos" checked> Frutos Secos</label>
+                            <label><input type="radio" name="flavor" value="especias"> Especias</label>
+                            <label><input type="radio" name="flavor" value="herbal"> Herbal</label>
+                            <label><input type="radio" name="flavor" value="tropical"> Tropical</label>
+                            <label><input type="radio" name="flavor" value="mentolado"> Mentolado</label>
+                            <label><input type="radio" name="flavor" value="cítrico"> Cítrico</label>
+                        </div>
+                    </aside>
+
+                    <div class="products-grid" id="products-grid">
+                        <!-- Generado por JS -->
+                    </div>
+                </div>
+            </section>
+
+            <!-- VIEW 2: PRODUCT DETAIL -->
+            <section id="view-detail" class="view hidden">
+                <div class="detail-container">
+                    <button class="btn-back" id="btn-back-catalog"><i class="ph ph-arrow-left"></i> Volver al catálogo</button>
+                    <div class="detail-content">
+                        <div class="detail-image glass-panel">
+                            <!-- Placeholder image, we can use CSS gradient or an abstract chocolate shape -->
+                            <div class="chocolate-bar-mock"></div>
+                        </div>
+                        <div class="detail-info">
+                            <h2 id="detail-title">Nombre del Producto</h2>
+                            <p class="detail-category" id="detail-category">Categoría</p>
+                            <p class="detail-price" id="detail-price">$2.50</p>
+                            <div class="detail-description">
+                                <p>Una barra de chocolate exquisita que despertará tus sentidos con notas únicas de <span id="detail-flavor">sabor</span>. Creada artesanalmente con pasión y la más alta calidad.</p>
+                                <ul>
+                                    <li>100% Cacao orgánico</li>
+                                    <li>Libre de gluten</li>
+                                    <li>Empaque sostenible</li>
+                                </ul>
+                            </div>
+                            <button class="btn-primary" id="btn-add-to-cart">Agregar al Carrito <i class="ph ph-plus"></i></button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- VIEW 3: CART & RECOMMENDATION -->
+            <section id="view-cart" class="view hidden">
+                <div class="cart-container">
+                    <h2>Tu Carrito</h2>
+                    
+                    <div class="cart-layout">
+                        <div class="cart-items" id="cart-items">
+                            <!-- Generado por JS -->
+                        </div>
+                        
+                        <div class="cart-summary glass-panel">
+                            <h3>Resumen</h3>
+                            <div class="summary-row">
+                                <span>Subtotal</span>
+                                <span id="cart-subtotal">$0.00</span>
+                            </div>
+                            <div class="summary-row">
+                                <span>Envío</span>
+                                <span>$0.00</span>
+                            </div>
+                            <hr>
+                            <div class="summary-row total">
+                                <span>Total</span>
+                                <span id="cart-total">$0.00</span>
+                            </div>
+                            <button class="btn-primary w-full" id="btn-checkout">Proceder al Pago</button>
+                        </div>
+                    </div>
+                    
+                    <!-- RECOMMENDED PRODUCT MODAL / SECTION -->
+                    <div class="recommendation-panel glass-panel hidden" id="recommendation-panel">
+                        <div class="rec-header">
+                            <i class="ph-fill ph-sparkle"></i>
+                            <h3>Especialmente para ti</h3>
+                        </div>
+                        <p class="rec-subtitle">Basado en tus preferencias, creemos que te encantará:</p>
+                        <div class="rec-product">
+                            <div class="rec-image">
+                                <div class="chocolate-bar-mock small"></div>
+                            </div>
+                            <div class="rec-info">
+                                <h4 id="rec-title">Cargando recomendación...</h4>
+                                <p id="rec-desc">...</p>
+                                <button class="btn-secondary" id="btn-add-rec">Agregar al Carrito</button>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </section>
+        </main>
+        
+        <footer>
+            <p>&copy; 2026 Morales Cocoa. Todos los derechos reservados.</p>
+        </footer>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>
