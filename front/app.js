@@ -1,3 +1,4 @@
+/* eslint-env browser */
 // State
 const state = {
     cat_preference: 0, // 0 = leche, 1 = oscuro
